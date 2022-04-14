@@ -1,0 +1,6 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mageplaza_MagentoComponent::design" title="Design Component" module="Mageplaza_MagentoComponent" sortOrder="51" resource="Mageplaza_MagentoComponent::design"/>
+        <add id="Mageplaza_MagentoComponent::component" title="Manage Component" module="Mageplaza_MagentoComponent" sortOrder="10" action="adminhtml/design/component" resource="Mageplaza_MagentoComponent::component" parent="Mageplaza_MagentoComponent::design"/>
+    </menu>
+</config>

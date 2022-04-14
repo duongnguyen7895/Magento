@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--Grid collection-->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mpmagentocomponent_component_grid_data_source" xsi:type="string">Mageplaza\MagentoComponent\Model\ResourceModel\Log\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Mageplaza\MagentoComponent\Model\ResourceModel\Log\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magento_component_table</argument>
+            <argument name="resourceModel" xsi:type="string">Mageplaza\MagentoComponent\Model\ResourceModel\Component</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- api  -->
+    <preference for="Mageplaza\MagentoComponent\Api\ComponentManagementInterface" type="Mageplaza\MagentoComponent\Model\Api\ComponentManagement"/>
+    <preference for="Mageplaza\MagentoComponent\Api\Data\ComponentInterface" type="Mageplaza\MagentoComponent\Model\Component"/>
+    <preference for="Mageplaza\MagentoComponent\Api\Data\ComponentSearchResultInterface" type="Magento\Framework\Api\SearchResults"/>
+
+    <type name="Magento\Catalog\Api\ProductRepositoryInterface">
+        <plugin name="CustomExtensionAttributeOperations" type="Mageplaza\MagentoComponent\Plugin\CustomtAttributesLoad"/>
+    </type>
+
+</config>
